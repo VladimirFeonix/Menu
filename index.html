@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dota 2 Menu</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="left-sidebar">
+            <div class="profile-summary">
+                <h2>Profile</h2>
+                <div class="rank">
+                    <img src="images/dota-2-mmr.png" alt="Rank">
+                    <div class="rank-text">
+                        <span class="rank-name">Immortal</span>
+                        <span class="rank-number">1234</span>
+                    </div>
+                </div>
+                <div class="match-stats">
+                    <div><span>Побед</span><span>1234</span></div>
+                    <div><span>Поражений</span><span>1000</span></div>
+                    <div><span>Похвал</span><span>50</span></div>
+                </div>
+            </div>
+            <div class="party-section">
+                <h2>Party</h2>
+                <ul>
+                    <li>
+                        <img src="https://i.pravatar.cc/150?u=a042581f4e29026704d" alt="Avatar" class="avatar">
+                        6.7.8 Cheshire
+                    </li>
+                </ul>
+            </div>
+            <div class="friends-list">
+                <h2>Friends</h2>
+                <ul>
+                    <li>
+                        <img src="https://i.pravatar.cc/150?u=a042581f4e29026704e" alt="Friend Avatar" class="avatar">
+                        <span>ShadowFiend</span>
+                        <span class="status in-game">In Game</span>
+                    </li>
+                    <li>
+                        <img src="https://i.pravatar.cc/150?u=a042581f4e29026704f" alt="Friend Avatar" class="avatar">
+                        <span>xX_PudgeMaster_Xx</span>
+                        <span class="status online">Online</span>
+                    </li>
+                    <li>
+                        <img src="https://i.pravatar.cc/150?u=a042581f4e29026704a" alt="Friend Avatar" class="avatar">
+                        <span>InvokerGod123</span>
+                        <span class="status offline">Offline</span>
+                    </li>
+                     <li>
+                        <img src="https://i.pravatar.cc/150?u=a042581f4e29026704b" alt="Friend Avatar" class="avatar">
+                        <span>MiranaMain</span>
+                        <span class="status online">Online</span>
+                    </li>
+                     <li>
+                        <img src="https://i.pravatar.cc/150?u=a042581f4e29026704c" alt="Friend Avatar" class="avatar">
+                        <span>TinkerIsLove</span>
+                        <span class="status in-game">In Game</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="main-content">
+            <div id="particles-js"></div>
+            <div class="header">
+                <div class="menu-bar">
+                    <div class="menu-item active"><a href="#">Home</a></div>
+                    <div class="menu-item"><a href="heroes.html">Heroes</a></div>
+                    <div class="menu-item"><a href="#">Store</a></div>
+                    <div class="menu-item"><a href="#">Watch</a></div>
+                    <div class="menu-item"><a href="#">Learn</a></div>
+                </div>
+                <div class="right-header-section">
+                    <a href="profile.html" class="profile-link">
+                        <div class="profile">
+                            <div class="profile-info">
+                                <span class="username">6.7.8 Cheshire</span>
+                                <div class="profile-details">
+                                    <span class="level">Level 50</span>
+                                </div>
+                            </div>
+                            <img src="https://i.pravatar.cc/150?u=a042581f4e29026704d" alt="Avatar" class="avatar">
+                        </div>
+                    </a>
+                    <button class="settings-button" id="settings-button">
+                        <img src="icons/settings.svg" alt="Settings" class="icon">
+                    </button>
+                </div>
+            </div>
+            <div class="content-area">
+                <div class="home-content">
+                    <div class="featured-hero">
+                        <h2>Featured Hero</h2>
+                        <img src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/juggernaut.png" alt="Juggernaut" class="hero-image">
+                        <h3>Juggernaut</h3>
+                    </div>
+                    <div class="recent-matches">
+                        <h2>Recent Matches</h2>
+                        <ul>
+                            <li>
+                                <span class="match-result win">Win</span>
+                                <span class="hero-played">Juggernaut</span>
+                                <span class="kda">15/3/12</span>
+                                <span class="game-mode">Ranked All Pick</span>
+                                <span class="mmr-change positive">+25 MMR</span>
+                                <span class="match-duration">35:21</span>
+                            </li>
+                            <li>
+                                <span class="match-result loss">Loss</span>
+                                <span class="hero-played">Pudge</span>
+                                <span class="kda">5/10/8</span>
+                                <span class="game-mode">All Pick</span>
+                                <span class="mmr-change negative">-28 MMR</span>
+                                <span class="match-duration">42:10</span>
+                            </li>
+                            <li>
+                                <span class="match-result win">Win</span>
+                                <span class="hero-played">Crystal Maiden</span>
+                                <span class="kda">2/5/25</span>
+                                <span class="game-mode">Ranked All Pick</span>
+                                <span class="mmr-change positive">+22 MMR</span>
+                                <span class="match-duration">28:45</span>
+                            </li>
+                            <li>
+                                <span class="match-result loss">Loss</span>
+                                <span class="hero-played">Invoker</span>
+                                <span class="kda">10/8/15</span>
+                                <span class="game-mode">Ranked All Pick</span>
+                                <span class="mmr-change negative">-25 MMR</span>
+                                <span class="match-duration">48:15</span>
+                            </li>
+                            <li>
+                                <span class="match-result win">Win</span>
+                                <span class="hero-played">Axe</span>
+                                <span class="kda">12/4/10</span>
+                                <span class="game-mode">All Pick</span>
+                                <span class="mmr-change positive">+25 MMR</span>
+                                <span class="match-duration">33:30</span>
+                            </li>
+                            <li>
+                                <span class="match-result win">Win</span>
+                                <span class="hero-played">Lion</span>
+                                <span class="kda">4/7/22</span>
+                                <span class="game-mode">Turbo</span>
+                                <span class="mmr-change positive">+15 MMR</span>
+                                <span class="match-duration">25:00</span>
+                            </li>
+                             <li>
+                                <span class="match-result loss">Loss</span>
+                                <span class="hero-played">Shadow Fiend</span>
+                                <span class="kda">8/9/5</span>
+                                <span class="game-mode">Ranked All Pick</span>
+                                <span class="mmr-change negative">-23 MMR</span>
+                                <span class="match-duration">39:50</span>
+                            </li>
+                            <li>
+                                <span class="match-result win">Win</span>
+                                <span class="hero-played">Witch Doctor</span>
+                                <span class="kda">7/2/18</span>
+                                <span class="game-mode">All Pick</span>
+                                <span class="mmr-change positive">+26 MMR</span>
+                                <span class="match-duration">31:17</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="play-button-container">
+                <a href="#" class="play-button">Play Dota</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="role-selection-window" id="role-selection-window">
+        <div class="role-selection-content">
+            <h2>Select Your Roles</h2>
+            <div class="roles">
+                <div class="role" data-role="carry">
+                    <img src="images/Carry.png" alt="Carry">
+                    <span>Carry</span>
+                </div>
+                <div class="role" data-role="mid">
+                    <img src="images/Mid.jpg" alt="Mid">
+                    <span>Mid</span>
+                </div>
+                <div class="role" data-role="offlane">
+                    <img src="images/pos3.jpg" alt="Offlane" class="offlane-icon">
+                    <span>Offlane</span>
+                </div>
+                <div class="role" data-role="support">
+                    <img src="images/Support.png" alt="Support">
+                    <span>Support</span>
+                </div>
+                <div class="role" data-role="hard-support">
+                    <img src="images/Hard%20Support.jpg" alt="Hard Support">
+                    <span>Hard Support</span>
+                </div>
+            </div>
+            <div class="game-mode-selection">
+                <label for="game-mode">Game Mode:</label>
+                <select id="game-mode" name="game-mode">
+                    <option value="all-pick">All Pick</option>
+                    <option value="ranked-all-pick">Ranked All Pick</option>
+                    <option value="turbo">Turbo</option>
+                </select>
+            </div>
+            <a href="#" class="find-match-button">Find Match</a>
+        </div>
+    </div>
+
+    <div class="settings-window" id="settings-window">
+        <div class="settings-content">
+            <h2>Game Settings</h2>
+            <div class="setting-category">
+                <h3>Video</h3>
+                <p>Resolution: 1920x1080</p>
+                <p>Display Mode: Fullscreen</p>
+            </div>
+            <div class="setting-category">
+                <h3>Audio</h3>
+                <p>Master Volume: 80%</p>
+                <p>Music Volume: 50%</p>
+            </div>
+            <div class="setting-category">
+                <h3>Controls</h3>
+                <p>Keybinds: Custom</p>
+            </div>
+            <button class="close-settings-button">Close</button>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="particles.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

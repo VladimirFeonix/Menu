@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dota 2 Heroes</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="heroes.css">
+</head>
+<body>
+    <div class="container">
+        <div class="main-content scrollable-content">
+            <div class="header">
+                <div class="menu-bar">
+                    <div class="menu-item"><a href="index.html">Home</a></div>
+                    <div class="menu-item active"><a href="#">Heroes</a></div>
+                    <div class="menu-item"><a href="#">Store</a></div>
+                    <div class="menu-item"><a href="#">Watch</a></div>
+                    <div class="menu-item"><a href="#">Learn</a></div>
+                </div>
+                <div class="right-header-section">
+                    <a href="profile.html" class="profile-link">
+                        <div class="profile">
+                            <div class="profile-info">
+                                <span class="username">6.7.8 Cheshire</span>
+                                <div class="profile-details">
+                                    <span class="level">Level 50</span>
+                                </div>
+                            </div>
+                            <img src="https://i.pravatar.cc/150?u=a042581f4e29026704d" alt="Avatar" class="avatar">
+                        </div>
+                    </a>
+                    <button class="settings-button" id="settings-button">
+                        <img src="icons/settings.svg" alt="Settings" class="icon">
+                    </button>
+                </div>
+            </div>
+            <div class="content-area">
+                <div class="filter-container">
+                    <div class="filter-group">
+                        <span class="filter-label">Search:</span>
+                        <input type="text" id="search-filter" class="filter-input" placeholder="Enter hero name...">
+                    </div>
+                    <div class="filter-group">
+                        <span class="filter-label">Attribute:</span>
+                        <div class="attribute-filters">
+                            <button class="filter-btn active" data-attribute="all">All</button>
+                            <button class="filter-btn" data-attribute="str">Strength</button>
+                            <button class="filter-btn" data-attribute="agi">Agility</button>
+                            <button class="filter-btn" data-attribute="int">Intelligence</button>
+                            <button class="filter-btn" data-attribute="universal">Universal</button>
+                        </div>
+                    </div>
+                    <div class="filter-group">
+                        <span class="filter-label">Role:</span>
+                        <select id="role-filter" class="filter-select">
+                            <option value="all">All Roles</option>
+                            <!-- Roles will be populated by JavaScript -->
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <span class="filter-label">Complexity:</span>
+                        <span>Filtering by complexity is not available at this time.</span>
+                    </div>
+                </div>
+                <div class="heroes-grid" id="heroes-grid">
+                    <!-- Heroes will be loaded here by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="heroes.js"></script>
+</body>
+</html>
