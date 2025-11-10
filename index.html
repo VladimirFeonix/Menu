@@ -10,18 +10,57 @@
     <div class="container">
         <div class="left-sidebar">
             <div class="profile-summary">
-                <h2>Profile</h2>
-                <div class="rank">
-                    <img src="images/dota-2-mmr.png" alt="Rank">
-                    <div class="rank-text">
-                        <span class="rank-name">Immortal</span>
-                        <span class="rank-number">1234</span>
+                <div class="profile-header">
+                    <div class="profile-avatar-wrapper">
+                        <img src="https://i.pravatar.cc/150?u=a042581f4e29026704d" alt="Avatar" class="profile-avatar">
+                        <div class="profile-level-badge">
+                            <span class="level-number">50</span>
+                        </div>
+                    </div>
+                    <div class="profile-info-section">
+                        <h2 class="profile-username">6.7.8 Cheshire</h2>
+                        <div class="profile-rank-badge">
+                            <div class="rank-icon-wrapper">
+                                <img src="images/dota-2-mmr.png" alt="Rank" class="rank-icon">
+                            </div>
+                            <div class="rank-info">
+                                <span class="rank-name">Immortal</span>
+                                <span class="rank-mmr">5,234 MMR</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="match-stats">
-                    <div><span>Побед</span><span>1234</span></div>
-                    <div><span>Поражений</span><span>1000</span></div>
-                    <div><span>Похвал</span><span>50</span></div>
+                <div class="profile-stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-value win-stat">1,234</div>
+                        <div class="stat-label">Wins</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value loss-stat">1,000</div>
+                        <div class="stat-label">Losses</div>
+                    </div>
+                    <div class="stat-item stat-item-full">
+                        <div class="winrate-bar">
+                            <div class="winrate-fill" style="width: 55.2%"></div>
+                            <span class="winrate-text">55.2% Win Rate</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="profile-additional-stats">
+                    <div class="additional-stat">
+                        <svg class="stat-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                            <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                            <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                        </svg>
+                        <span class="stat-text">50 Commends</span>
+                    </div>
+                    <div class="additional-stat">
+                        <svg class="stat-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                        </svg>
+                        <span class="stat-text">2,234 Matches</span>
+                    </div>
                 </div>
             </div>
             <div class="friends-list">
@@ -106,13 +145,66 @@
             <div id="particles-js"></div>
             <div class="header">
                 <div class="menu-bar">
-                    <div class="menu-item"><a href="#">Home</a></div>
-                    <div class="menu-item"><a href="heroes.html">Heroes</a></div>
-                    <div class="menu-item"><a href="#">Store</a></div>
-                    <div class="menu-item"><a href="#">Watch</a></div>
-                    <div class="menu-item"><a href="#">Learn</a></div>
+                    <div class="logo-section">
+                        <svg class="dota-logo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="50" cy="50" r="45" fill="none" stroke="#EAAA00" stroke-width="3"/>
+                            <path d="M50 20 L65 40 L50 50 L35 40 Z" fill="#EAAA00"/>
+                            <path d="M50 50 L65 70 L50 80 L35 70 Z" fill="#EAAA00"/>
+                        </svg>
+                        <span class="logo-text">DOTA 2</span>
+                    </div>
+                    <div class="menu-item active">
+                        <a href="#">
+                            <img src="icons/home.svg" alt="Home" class="menu-icon">
+                            <span>Home</span>
+                        </a>
+                    </div>
+                    <div class="menu-item">
+                        <a href="heroes.html">
+                            <img src="icons/heroes.svg" alt="Heroes" class="menu-icon">
+                            <span>Heroes</span>
+                        </a>
+                    </div>
+                    <div class="menu-item">
+                        <a href="#">
+                            <img src="icons/store.svg" alt="Store" class="menu-icon">
+                            <span>Store</span>
+                        </a>
+                    </div>
+                    <div class="menu-item">
+                        <a href="#">
+                            <img src="icons/watch.svg" alt="Watch" class="menu-icon">
+                            <span>Watch</span>
+                        </a>
+                    </div>
+                    <div class="menu-item">
+                        <a href="#">
+                            <img src="icons/learn.svg" alt="Learn" class="menu-icon">
+                            <span>Learn</span>
+                        </a>
+                    </div>
                 </div>
                 <div class="right-header-section">
+                    <div class="currency-section">
+                        <div class="currency-item">
+                            <svg class="currency-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                                <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                                <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                            </svg>
+                            <span class="currency-amount">800</span>
+                        </div>
+                    </div>
+                    <div class="notifications-button" id="notifications-button">
+                        <svg class="notifications-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M13.73 21a2 2 0 0 1-3.46 0" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span class="notification-badge">3</span>
+                    </div>
+                    <button class="settings-button" id="settings-button">
+                        <img src="icons/settings.svg" alt="Settings" class="icon">
+                    </button>
                     <a href="profile.html" class="profile-link">
                         <div class="profile">
                             <div class="profile-info">
@@ -124,9 +216,6 @@
                             <img src="https://i.pravatar.cc/150?u=a042581f4e29026704d" alt="Avatar" class="avatar">
                         </div>
                     </a>
-                    <button class="settings-button" id="settings-button">
-                        <img src="icons/settings.svg" alt="Settings" class="icon">
-                    </button>
                 </div>
             </div>
             <div class="content-area">
@@ -136,20 +225,29 @@
                         <div class="match-header">
                             <span class="match-result win">WIN</span>
                             <span class="match-duration">35:21</span>
-                            <span class="game-mode">Ranked All Pick</span>
+                            <div class="game-mode-badge">
+                                <span class="game-mode">RANKED ALL PICK</span>
+                            </div>
                         </div>
                         <div class="teams-container">
                             <div class="team radiant">
                                 <h3>Radiant</h3>
                                 <div class="player-card owner-player">
-                                    <img src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/juggernaut.png" alt="Juggernaut" class="player-hero-image">
+                                    <div class="hero-avatar-wrapper">
+                                        <img src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/juggernaut.png" alt="Juggernaut" class="player-hero-image">
+                                        <div class="hero-level-indicator level-gold"></div>
+                                    </div>
                                     <div class="player-details">
                                         <span class="player-name">Player 1</span>
                                         <span class="player-kda">15/3/12</span>
                                         <span class="player-gpm-xpm">500 GPM / 600 XPM</span>
                                     </div>
-                                </div>                                <div class="player-card">
-                                    <img src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/pudge.png" alt="Pudge" class="player-hero-image">
+                                </div>
+                                <div class="player-card">
+                                    <div class="hero-avatar-wrapper">
+                                        <img src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/pudge.png" alt="Pudge" class="player-hero-image">
+                                        <div class="hero-level-indicator level-green"></div>
+                                    </div>
                                     <div class="player-details">
                                         <span class="player-name">Player 2</span>
                                         <span class="player-kda">5/10/8</span>
@@ -157,7 +255,10 @@
                                     </div>
                                 </div>
                                 <div class="player-card">
-                                    <img src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/crystal_maiden.png" alt="Crystal Maiden" class="player-hero-image">
+                                    <div class="hero-avatar-wrapper">
+                                        <img src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/crystal_maiden.png" alt="Crystal Maiden" class="player-hero-image">
+                                        <div class="hero-level-indicator level-blue"></div>
+                                    </div>
                                     <div class="player-details">
                                         <span class="player-name">Player 3</span>
                                         <span class="player-kda">2/5/25</span>
@@ -165,7 +266,10 @@
                                     </div>
                                 </div>
                                 <div class="player-card">
-                                    <img src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/invoker.png" alt="Invoker" class="player-hero-image">
+                                    <div class="hero-avatar-wrapper">
+                                        <img src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/invoker.png" alt="Invoker" class="player-hero-image">
+                                        <div class="hero-level-indicator level-orange"></div>
+                                    </div>
                                     <div class="player-details">
                                         <span class="player-name">Player 4</span>
                                         <span class="player-kda">10/8/15</span>
@@ -173,7 +277,10 @@
                                     </div>
                                 </div>
                                 <div class="player-card">
-                                    <img src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/axe.png" alt="Axe" class="player-hero-image">
+                                    <div class="hero-avatar-wrapper">
+                                        <img src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/axe.png" alt="Axe" class="player-hero-image">
+                                        <div class="hero-level-indicator level-blue"></div>
+                                    </div>
                                     <div class="player-details">
                                         <span class="player-name">Player 5</span>
                                         <span class="player-kda">12/4/10</span>
@@ -185,7 +292,10 @@
                             <div class="team dire">
                                 <h3>Dire</h3>
                                 <div class="player-card">
-                                    <img src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/lion.png" alt="Lion" class="player-hero-image">
+                                    <div class="hero-avatar-wrapper">
+                                        <img src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/lion.png" alt="Lion" class="player-hero-image">
+                                        <div class="hero-level-indicator level-blue"></div>
+                                    </div>
                                     <div class="player-details">
                                         <span class="player-name">Enemy 1</span>
                                         <span class="player-kda">4/7/22</span>
@@ -193,7 +303,10 @@
                                     </div>
                                 </div>
                                 <div class="player-card">
-                                    <img src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/lina.png" alt="Lina" class="player-hero-image">
+                                    <div class="hero-avatar-wrapper">
+                                        <img src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/lina.png" alt="Lina" class="player-hero-image">
+                                        <div class="hero-level-indicator level-green"></div>
+                                    </div>
                                     <div class="player-details">
                                         <span class="player-name">Enemy 2</span>
                                         <span class="player-kda">8/9/5</span>
@@ -201,7 +314,10 @@
                                     </div>
                                 </div>
                                 <div class="player-card">
-                                    <img src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/witch_doctor.png" alt="Witch Doctor" class="player-hero-image">
+                                    <div class="hero-avatar-wrapper">
+                                        <img src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/witch_doctor.png" alt="Witch Doctor" class="player-hero-image">
+                                        <div class="hero-level-indicator level-orange"></div>
+                                    </div>
                                     <div class="player-details">
                                         <span class="player-name">Enemy 3</span>
                                         <span class="player-kda">7/2/18</span>
@@ -209,7 +325,10 @@
                                     </div>
                                 </div>
                                 <div class="player-card">
-                                    <img src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/phantom_assassin.png" alt="Phantom Assassin" class="player-hero-image">
+                                    <div class="hero-avatar-wrapper">
+                                        <img src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/phantom_assassin.png" alt="Phantom Assassin" class="player-hero-image">
+                                        <div class="hero-level-indicator level-gold"></div>
+                                    </div>
                                     <div class="player-details">
                                         <span class="player-name">Enemy 4</span>
                                         <span class="player-kda">10/6/10</span>
@@ -217,7 +336,10 @@
                                     </div>
                                 </div>
                                 <div class="player-card">
-                                    <img src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/ogre_magi.png" alt="Ogre Magi" class="player-hero-image">
+                                    <div class="hero-avatar-wrapper">
+                                        <img src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/ogre_magi.png" alt="Ogre Magi" class="player-hero-image">
+                                        <div class="hero-level-indicator level-blue"></div>
+                                    </div>
                                     <div class="player-details">
                                         <span class="player-name">Enemy 5</span>
                                         <span class="player-kda">3/12/15</span>
@@ -297,44 +419,78 @@
                         </ul>
                     </div>                </div>
             </div>
-            <div class="play-button-container">
-                <a href="#" class="play-button">Play Dota</a>
+            <div class="play-button-wrapper">
+                <a href="#" class="play-button-enhanced" id="play-button">
+                    <div class="play-button-content">
+                        <svg class="play-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 5V19L19 12L8 5Z" fill="currentColor"/>
+                        </svg>
+                        <span class="play-button-text">Find Match</span>
+                    </div>
+                    <div class="play-button-glow"></div>
+                </a>
             </div>
         </div>
     </div>
 
     <div class="role-selection-window" id="role-selection-window">
         <div class="role-selection-content">
-            <h2>Select Your Roles</h2>
-            <div class="roles">
+            <h2>Choose your preferred roles</h2>
+            <div class="roles roles-svg-modern">
                 <div class="role" data-role="carry">
-                    <img src="images/Carry.png" alt="Carry">
+                    <div class="role-svg-wrapper">
+                        <!-- Carry icon: Sword -->
+                        <svg viewBox="0 0 32 32" fill="none" class="role-svg-icon role-carry"><path d="M25 7L10 22" stroke="#FFD54F" stroke-width="3" stroke-linecap="round"/><path d="M15.5 18.5L20.5 13.5" stroke="#FFD54F" stroke-width="2" stroke-linecap="round"/><circle cx="10" cy="22" r="3" fill="#1A1A28" stroke="#FFD54F" stroke-width="2.5"/></svg>
+                    </div>
                     <span>Carry</span>
                 </div>
                 <div class="role" data-role="mid">
-                    <img src="images/Mid.jpg" alt="Mid">
+                    <div class="role-svg-wrapper">
+                        <!-- Mid icon: Orb/Bead -->
+                        <svg viewBox="0 0 32 32" fill="none" class="role-svg-icon role-mid"><circle cx="16" cy="16" r="8" fill="#42A5F5" stroke="#1976D2" stroke-width="2.5"/><circle cx="16" cy="16" r="3" fill="#FFD54F"/></svg>
+                    </div>
                     <span>Mid</span>
                 </div>
                 <div class="role" data-role="offlane">
-                    <img src="images/pos3.jpg" alt="Offlane" class="offlane-icon">
+                    <div class="role-svg-wrapper">
+                        <!-- Offlane icon: Shield -->
+                        <svg viewBox="0 0 32 32" fill="none" class="role-svg-icon role-offlane"><rect x="9" y="7" width="14" height="18" rx="6" fill="#07EF9C" stroke="#007E7E" stroke-width="2.5"/><path d="M16 7V25" stroke="#FFD54F" stroke-width="2"/></svg>
+                    </div>
                     <span>Offlane</span>
                 </div>
                 <div class="role" data-role="support">
-                    <img src="images/Support.png" alt="Support">
+                    <div class="role-svg-wrapper">
+                        <!-- Support icon: Feather/Leaf -->
+                        <svg viewBox="0 0 32 32" fill="none" class="role-svg-icon role-support"><path d="M18 7C11 11 7 18 9 23C12 30 24 27 25 21C26 13 18 7 18 7Z" fill="#4CAF50" stroke="#1976D2" stroke-width="2.5"/><path d="M18 13L16 21" stroke="#FFD54F" stroke-width="2.2"/></svg>
+                    </div>
                     <span>Support</span>
                 </div>
                 <div class="role" data-role="hard-support">
-                    <img src="images/Hard%20Support.jpg" alt="Hard Support">
+                    <div class="role-svg-wrapper">
+                        <!-- Hard Support icon: Heart -->
+                        <svg viewBox="0 0 32 32" fill="none" class="role-svg-icon role-hard-support"><path d="M16 26L7.2 16.4C3 11.5 10 6.5 16 13C22 6.5 29 11.5 24.8 16.4L16 26Z" fill="#FF8C00" stroke="#FFD54F" stroke-width="2.5"/></svg>
+                    </div>
                     <span>Hard Support</span>
                 </div>
             </div>
             <div class="game-mode-selection">
-                <label for="game-mode">Game Mode:</label>
-                <select id="game-mode" name="game-mode">
-                    <option value="all-pick">All Pick</option>
-                    <option value="ranked-all-pick">Ranked All Pick</option>
-                    <option value="turbo">Turbo</option>
-                </select>
+                <label for="game-mode">Game Mode</label>
+                <div class="game-mode-select-row">
+                    <span class="game-mode-icon-wrapper">
+                        <!-- Simple swords/swirl icon -->
+                        <svg class="game-mode-icon" viewBox="0 0 32 32" fill="none">
+                          <circle cx="16" cy="16" r="13" stroke="#FFD54F" stroke-width="2"/>
+                          <path d="M10 18c-2-3 1-9 8-7" stroke="#42A5F5" stroke-width="2" stroke-linecap="round"/>
+                          <path d="M21 22c2-3-1-8-8-7" stroke="#FF8C00" stroke-width="2" stroke-linecap="round"/>
+                          <path d="M12 23l1.5-5l4 3.5l-5.5 1.5z" fill="#FFD54F" fill-opacity=".8"/>
+                        </svg>
+                    </span>
+                    <select id="game-mode" name="game-mode">
+                        <option value="all-pick">All Pick</option>
+                        <option value="ranked-all-pick">Ranked All Pick</option>
+                        <option value="turbo">Turbo</option>
+                    </select>
+                </div>
             </div>
             <a href="#" class="find-match-button">Find Match</a>
         </div>

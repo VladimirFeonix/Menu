@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const playButton = document.querySelector('.play-button');
+    const playButton = document.querySelector('.play-button-enhanced') || document.querySelector('.play-button') || document.getElementById('play-button');
     const roleSelectionWindow = document.getElementById('role-selection-window');
     const findMatchButton = document.querySelector('.find-match-button');
     const roles = document.querySelectorAll('.role');
@@ -7,11 +7,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const settingsButton = document.getElementById('settings-button');
     const settingsWindow = document.getElementById('settings-window');
     const closeSettingsButton = document.querySelector('.close-settings-button');
+    const notificationsButton = document.getElementById('notifications-button');
 
-    playButton.addEventListener('click', (e) => {
-        e.preventDefault();
-        roleSelectionWindow.style.display = 'flex';
-    });
+    if (playButton) {
+        playButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            if (roleSelectionWindow) {
+                roleSelectionWindow.style.display = 'flex';
+            }
+        });
+    }
 
     findMatchButton.addEventListener('click', (e) => {
         e.preventDefault();
@@ -45,6 +50,17 @@ document.addEventListener('DOMContentLoaded', () => {
             settingsWindow.style.display = 'none';
         }
     });
+
+    // Notifications button functionality
+    if (notificationsButton) {
+        notificationsButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            // Here you can add notification dropdown functionality
+            console.log('Notifications clicked');
+            // For now, just show an alert
+            alert('Notifications: 3 new messages');
+        });
+    }
 
     // Friends list toggle functionality
     const friendsToggle = document.getElementById('friends-toggle');
@@ -236,13 +252,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const recentMatchesList = document.querySelectorAll('.recent-matches ul li');
     const lastMatchResult = document.querySelector('.match-summary .match-header .match-result');
     const lastMatchDuration = document.querySelector('.match-summary .match-header .match-duration');
-    const lastMatchMode = document.querySelector('.match-summary .match-header .game-mode');
+    const lastMatchMode = document.querySelector('.match-summary .match-header .game-mode-badge .game-mode');
     const lastMatchScore = document.querySelector('.match-summary .match-score');
     const radiantTeamContainer = document.querySelector('.match-summary .team.radiant');
     const direTeamContainer = document.querySelector('.match-summary .team.dire');
 
     function populateTeam(teamContainer, players, ownerHero) {
-        teamContainer.innerHTML = '<h3>' + (teamContainer.classList.contains('radiant') ? 'Radiant' : 'Dire') + '</h3>';
+        const teamName = teamContainer.classList.contains('radiant') ? 'Radiant' : 'Dire';
+        teamContainer.innerHTML = '<h3>' + teamName + '</h3>';
+        
+        // Define level indicators for each player (cycling through colors)
+        const levelColors = ['level-blue', 'level-green', 'level-gold', 'level-orange'];
+        let colorIndex = 0;
+        
         players.forEach(player => {
             const playerCard = document.createElement('div');
             playerCard.classList.add('player-card');
@@ -251,8 +273,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 playerCard.classList.add('owner-player');
                 console.log('Owner player highlighted:', player.name);
             }
+            
+            // Assign level indicator color
+            const levelClass = player.hero === ownerHero ? 'level-gold' : levelColors[colorIndex % levelColors.length];
+            colorIndex++;
+            
             playerCard.innerHTML = `
-                <img src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/${player.hero}.png" alt="${player.hero}" class="player-hero-image">
+                <div class="hero-avatar-wrapper">
+                    <img src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/${player.hero}.png" alt="${player.hero}" class="player-hero-image">
+                    <div class="hero-level-indicator ${levelClass}"></div>
+                </div>
                 <div class="player-details">
                     <span class="player-name">${player.name}</span>
                     <span class="player-kda">${player.kda}</span>
@@ -267,7 +297,9 @@ document.addEventListener('DOMContentLoaded', () => {
         lastMatchResult.textContent = match.result.toUpperCase();
         lastMatchResult.className = `match-result ${match.result}`; // Update class for win/loss color
         lastMatchDuration.textContent = match.duration;
-        lastMatchMode.textContent = match.mode;
+        if (lastMatchMode) {
+            lastMatchMode.textContent = match.mode.toUpperCase();
+        }
         lastMatchScore.textContent = match.score;
 
         populateTeam(radiantTeamContainer, match.radiant, match.ownerHero);

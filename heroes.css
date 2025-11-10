@@ -1,12 +1,16 @@
 .filter-container {
-    background: rgba(0, 0, 0, 0.7);
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-    border: 1px solid #5a4a3a;
+    background: var(--gradient-card);
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 10px;
+    border: 1px solid var(--border-secondary);
     display: flex;
     gap: 30px;
     align-items: center;
+    box-shadow: var(--shadow-lg),
+                inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(5px);
+    flex-wrap: wrap;
 }
 
 .filter-group {
@@ -17,36 +21,82 @@
 
 .filter-label {
     font-weight: bold;
-    color: #e5b400;
+    color: var(--text-gold);
     text-transform: uppercase;
 }
 
 .attribute-filters .filter-btn {
-    background: #2a2119;
-    border: 1px solid #5a4a3a;
-    color: #c5bda6;
-    padding: 8px 15px;
+    background: var(--gradient-card);
+    border: 2px solid var(--border-secondary);
+    color: var(--text-primary);
+    padding: 10px 20px;
     cursor: pointer;
-    transition: background-color 0.3s, border-color 0.3s;
+    transition: all 0.3s ease;
+    border-radius: 6px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: var(--shadow-sm);
+    position: relative;
+    overflow: hidden;
+}
+
+.attribute-filters .filter-btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(234, 170, 0, 0.15);
+    transform: translate(-50%, -50%);
+    transition: width 0.4s, height 0.4s;
+}
+
+.attribute-filters .filter-btn:hover::before {
+    width: 200px;
+    height: 200px;
 }
 
 .attribute-filters .filter-btn:hover,
 .attribute-filters .filter-btn.active {
-    background-color: #e5b400;
-    border-color: #e5b400;
-    color: #000;
+    background: var(--gradient-gold);
+    border-color: var(--accent-gold);
+    color: var(--bg-primary);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-gold);
+}
+
+.attribute-filters .filter-btn.active {
+    animation: filterPulse 2s ease-in-out infinite;
+}
+
+@keyframes filterPulse {
+    0%, 100% { box-shadow: var(--shadow-gold); }
+    50% { box-shadow: var(--shadow-gold-glow); }
 }
 
 .filter-select, .filter-input {
-    background: #2a2119;
-    border: 1px solid #5a4a3a;
-    color: #c5bda6;
-    padding: 8px;
-    border-radius: 3px;
+    background: var(--gradient-card);
+    border: 2px solid var(--border-secondary);
+    color: var(--text-primary);
+    padding: 10px 15px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-sm);
+    font-size: 0.95em;
+}
+
+.filter-select:focus, .filter-input:focus {
+    outline: none;
+    border-color: var(--border-accent);
+    box-shadow: var(--shadow-gold),
+                var(--shadow-sm);
 }
 
 .filter-input::placeholder {
-    color: #a0937d;
+    color: var(--text-tertiary);
 }
 
 .heroes-grid {
@@ -57,13 +107,29 @@
 }
 
 .hero-card {
-    background: rgba(0, 0, 0, 0.7);
-    border: 1px solid #5a4a3a;
-    border-radius: 5px;
+    background: var(--gradient-card);
+    border: 2px solid var(--border-secondary);
+    border-radius: 10px;
     text-align: center;
-    padding: 10px;
-    transition: transform 0.3s, box-shadow 0.3s;
+    padding: 15px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--shadow-md),
+                inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.hero-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(234, 170, 0, 0.12) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.4s;
 }
 
 .hero-card.hidden {
@@ -71,17 +137,45 @@
 }
 
 .hero-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 15px rgba(229, 180, 0, 0.5);
+    transform: translateY(-10px) scale(1.08);
+    border-color: var(--border-accent);
+    box-shadow: var(--shadow-lg),
+                var(--shadow-gold),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.hero-card:hover::before {
+    opacity: 1;
 }
 
 .hero-card img {
     width: 100%;
-    border-radius: 5px;
+    border-radius: 8px;
+    transition: all 0.4s ease;
+    filter: brightness(0.9);
+    border: 2px solid var(--border-secondary);
+}
+
+.hero-card:hover img {
+    filter: brightness(1.1);
+    border-color: var(--border-accent);
+    transform: scale(1.05);
+    box-shadow: var(--shadow-gold);
 }
 
 .hero-card .hero-name {
-    margin-top: 10px;
+    margin-top: 12px;
     font-weight: bold;
-    color: #c5bda6;
+    color: var(--text-primary);
+    font-size: 0.95em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.hero-card:hover .hero-name {
+    color: var(--text-gold);
+    text-shadow: var(--shadow-gold-glow),
+                 0 2px 4px rgba(0, 0, 0, 0.6);
 }
